@@ -25,11 +25,34 @@ body {
 
 main {
   grid-row: main-start / main-end;
+
+  display: grid;
+  grid-template-columns: 1fr 80vw 1fr;
+  grid-template-rows:
+    [header-start] minmax(30vh, 1fr)
+    [header-end information-start] 1fr [information-end quote-start] minmax(
+      8rem,
+      1fr
+    )
+    [quote-end cta-start] 1fr [cta-end];
+  grid-row-gap: 5rem;
 }
 
 /* header section */
 .header {
+  grid-row: header-start / header-end;
+  grid-column: 1 / -1;
   background-color: var(--dark);
+  padding: 2rem 15rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header-logo {
@@ -37,10 +60,27 @@ main {
   color: var(--light-1);
 }
 
+.header-links {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 50rem;
+}
+
 .header-links,
 .header-content__text p {
   font-weight: 1.8rem;
   color: var(--light-2);
+}
+
+.header-content {
+  display: flex;
+  margin-top: 4%;
+  margin-bottom: 6%;
+}
+
+.header-content__text {
+  width: 45rem;
 }
 
 .header-content__text > h2 {
@@ -51,9 +91,33 @@ main {
 
 .header-content__button {
   background-color: var(--light-blue);
+  border-radius: 1rem;
+  border: none;
+  color: var(--light-1);
+  font-weight: bold;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  width: 9rem;
+}
+
+.header-content__image {
+  height: 100%;
+  width: 50rem;
+  background-color: #8b909be7;
+  margin-left: 7rem;
+  color: var(--light-2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* information section */
+.information {
+  grid-row: information-start / information-end;
+  grid-column: 2 / 3;
+}
+
 .information > h2 {
   font-size: 3.6rem;
   font-weight: bolder;
@@ -62,6 +126,8 @@ main {
 
 /* quote section */
 .quote {
+  grid-row: quote-start / quote-end;
+  grid-column: 1 / -1;
   background-color: var(--light-2);
 }
 
@@ -74,6 +140,8 @@ main {
 
 /* call-to-action section */
 .call-to-action {
+  grid-row: cta-start / cta-end;
+  grid-column: 2 / 3;
   background-color: var(--light-blue);
 }
 
