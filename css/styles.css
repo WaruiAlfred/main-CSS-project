@@ -1,3 +1,11 @@
+:root {
+  /* colors */
+  --dark: #1f2937;
+  --light-1: #f9faf8;
+  --light-2: #e5e7eb;
+  --light-blue: #3882f6;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,59 +18,71 @@ html {
 
 body {
   font-size: 1.6rem;
+  display: grid;
+  grid-template-rows: [main-start] 1fr [main-end footer-start] 6rem [footer-end];
+  grid-row-gap: 4rem;
+}
+
+main {
+  grid-row: main-start / main-end;
 }
 
 /* header section */
 .header {
-  background-color: #1f2937;
+  background-color: var(--dark);
 }
 
 .header-logo {
   font-size: 2.4rem;
-  color: #f9faf8;
+  color: var(--light-1);
 }
 
 .header-links,
 .header-content__text p {
   font-weight: 1.8rem;
-  color: #e5e7eb;
+  color: var(--light-2);
 }
 
 .header-content__text > h2 {
   font-size: 4.8rem;
   font-weight: bolder;
-  color: #f9faf8;
+  color: var(--light-1);
 }
 
 .header-content__button {
-  background-color: #3882f6;
+  background-color: var(--light-blue);
 }
 
 /* information section */
 .information > h2 {
   font-size: 3.6rem;
   font-weight: bolder;
-  color: #1f2937;
+  color: var(--dark);
 }
 
 /* quote section */
 .quote {
-  background-color: #e5e7eb;
+  background-color: var(--light-2);
 }
 
 .quote-text {
   font-weight: 3.6rem;
   font-weight: lighter;
   font-style: italic;
-  color: #1f2937;
+  color: var(--dark);
 }
 
 /* call-to-action section */
 .call-to-action {
-  background-color: #3882f6;
+  background-color: var(--light-blue);
 }
 
 /* footer section */
 footer {
-  background-color: #1f2937;
+  grid-row: footer-start / footer-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark);
+  color: var(--light-1);
 }
