@@ -159,6 +159,12 @@ nav {
   grid-row: quote-start / quote-end;
   grid-column: 1 / -1;
   background-color: var(--light-2);
+  padding: 0 47rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .quote-text {
@@ -166,6 +172,16 @@ nav {
   font-weight: lighter;
   font-style: italic;
   color: var(--dark);
+  letter-spacing: 0.1rem;
+  line-height: 1.2;
+}
+
+.quote-author {
+  align-self: flex-end;
+}
+
+.quote-author::before {
+  content: "- ";
 }
 
 /* call-to-action section */
