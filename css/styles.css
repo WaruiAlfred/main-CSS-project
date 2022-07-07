@@ -34,7 +34,7 @@ main {
       8rem,
       1fr
     )
-    [quote-end cta-start] 1fr [cta-end];
+    [quote-end cta-start] 10rem [cta-end];
   grid-row-gap: 3rem;
 }
 
@@ -189,6 +189,28 @@ nav {
   grid-row: cta-start / cta-end;
   grid-column: 2 / 3;
   background-color: var(--light-blue);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.call-to-action__text h4 {
+  color: var(--light-1);
+}
+
+.call-to-action__text p {
+  color: var(--light-2);
+}
+
+.call-to-action__button {
+  background-color: transparent;
+  border-radius: 1rem;
+  border: 2px solid var(--light-1);
+  color: var(--light-1);
+  font-weight: bold;
+  padding: 0.6rem;
+  width: 10rem;
 }
 
 /* footer section */
